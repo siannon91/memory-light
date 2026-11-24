@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const symbols = [
   { name: "libro", emoji: "📖" },
@@ -44,6 +44,25 @@ function App() {
 
     setFlipped([...flipped, card.id])
   }
+
+  useEffect(() => {
+    if (flipped.length !== 2) return
+
+    setMoves((m) => m + 1)
+
+    const [first, second] = flipped
+    const firstCard = cards.find((c) => c.id === first)
+    const secondCard = cards.find((c) => c.id === second)
+
+    if (firstCard.name === secondCard.name) {
+      setMatched((prev) => [...prev, first, second])
+      setFlipped([])
+    } else {
+      setTimeout(() => {
+        setFlipped([])
+      }, 1000)
+    }
+  }, [flipped, cards])
 
   return (
     <div>
