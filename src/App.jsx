@@ -43,11 +43,11 @@ function App() {
   }, [flipped, cards])
 
   return (
-    <div className="app">
-      <h1>Memory Light</h1>
+    <div className="game">
+      <h1>Memory Game</h1>
       <p>Trekk: {moves}</p>
-      <button onClick={resetGame}>Nytt spill</button>
-      
+          
+      <div className="app">
           <Board
             cards={cards}
             flipped={flipped}
@@ -55,9 +55,11 @@ function App() {
             onCardClick={handleCardClick}
           />
       
-      {matched.length === cards.length && (
-        <p>Gratulerer! Du fant alle parene på {moves} trekk!</p>
-      )}
+          {matched.length === cards.length && (
+          <p>Gratulerer! Du fant alle parene på {moves} trekk!</p>
+          )}
+          <button className="new-game" onClick={resetGame}>Nytt spill</button>
+        </div>
     </div>
   )
 }
