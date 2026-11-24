@@ -1,12 +1,21 @@
+import libro from "../assets/libro.jpg"
+import sciarpa from "../assets/sciarpa.jpg"
+import biscotto from "../assets/biscotto.jpg"
+import tea from "../assets/tea.jpg"
+import pupazzo from "../assets/pupazzo.jpg"
+import giornale from "../assets/giornale.jpg"
+import neve from "../assets/neve.jpg"
+import natale from "../assets/natale.jpg"
+
 export const symbols = [
-  { name: "libro", emoji: "📖" },
-  { name: "sciarpa", emoji: "🧣" },
-  { name: "biscotto", emoji: "🍪" },
-  { name: "tea", emoji: "🍵" },
-  { name: "pupazzo", emoji: "⛄" },
-  { name: "giornale", emoji: "📰" },
-  { name: "neve", emoji: "❄️" },
-  { name: "natale", emoji: "🎄" },
+  { name: "libro", emoji: "📖", image: libro },
+  { name: "sciarpa", emoji: "🧣", image: sciarpa },
+  { name: "biscotto", emoji: "🍪", image: biscotto },
+  { name: "tea", emoji: "🍵", image: tea },
+  { name: "pupazzo", emoji: "⛄", image: pupazzo },
+  { name: "giornale", emoji: "📰", image: giornale },
+  { name: "neve", emoji: "❄️", image: neve },
+  { name: "natale", emoji: "🎄", image: natale },
 ]
 
 export function createDeck() {
