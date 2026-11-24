@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const symbols = [
   { name: "libro", emoji: "📖" },
   { name: "sciarpa", emoji: "🧣" },
@@ -30,9 +32,16 @@ function shuffle(cards) {
 }
 
 function App() {
+  const [cards, setCards] = useState(() => shuffle(createDeck()))
+
   return (
     <div>
       <h1>Memory Light</h1>
+      <div>
+        {cards.map((card) => (
+          <button key={card.id}>❓</button>
+        ))}
+      </div>
     </div>
   )
 }
