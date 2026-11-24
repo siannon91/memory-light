@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { createDeck, shuffle } from "./data/cards"
-import Card from "./components/Card"
+import Board from "./components/Board"
 
 function App() {
   const [cards, setCards] = useState(() => shuffle(createDeck()))
@@ -47,16 +47,14 @@ function App() {
       <h1>Memory Light</h1>
       <p>Trekk: {moves}</p>
       <button onClick={resetGame}>Nytt spill</button>
-      <div>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            isFaceUp={flipped.includes(card.id) || matched.includes(card.id)}
-            onClick={() => handleCardClick(card)}
+      
+          <Board
+            cards={cards}
+            flipped={flipped}
+            matched={matched}
+            onCardClick={handleCardClick}
           />
-        ))}
-      </div>
+      
       {matched.length === cards.length && (
         <p>Gratulerer! Du fant alle parene på {moves} trekk!</p>
       )}
