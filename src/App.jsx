@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { createDeck, shuffle } from "./data/cards"
+import Card from "./components/Card"
 
 function App() {
   const [cards, setCards] = useState(() => shuffle(createDeck()))
@@ -48,9 +49,12 @@ function App() {
       <button onClick={resetGame}>Nytt spill</button>
       <div>
         {cards.map((card) => (
-          <button key={card.id} onClick={() => handleCardClick(card)}>
-            {flipped.includes(card.id) || matched.includes(card.id) ? card.emoji : "❓"}
-          </button>
+          <Card
+            key={card.id}
+            card={card}
+            isFaceUp={flipped.includes(card.id) || matched.includes(card.id)}
+            onClick={() => handleCardClick(card)}
+          />
         ))}
       </div>
       {matched.length === cards.length && (
