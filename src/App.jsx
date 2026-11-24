@@ -67,6 +67,7 @@ function App() {
   return (
     <div>
       <h1>Memory Light</h1>
+      <p>Trekk: {moves}</p>
       <div>
         {cards.map((card) => (
           <button key={card.id} onClick={() => handleCardClick(card)}>
