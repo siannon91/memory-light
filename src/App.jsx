@@ -33,13 +33,26 @@ function shuffle(cards) {
 
 function App() {
   const [cards, setCards] = useState(() => shuffle(createDeck()))
+  const [flipped, setFlipped] = useState([])
+  const [matched, setMatched] = useState([])
+  const [moves, setMoves] = useState(0)
+
+  function handleCardClick(card) {
+    if (flipped.length === 2) return
+    if (flipped.includes(card.id)) return
+    if (matched.includes(card.id)) return
+
+    setFlipped([...flipped, card.id])
+  }
 
   return (
     <div>
       <h1>Memory Light</h1>
       <div>
         {cards.map((card) => (
-          <button key={card.id}>❓</button>
+          <button key={card.id} onClick={() => handleCardClick(card)}>
+            {flipped.includes(card.id) || matched.includes(card.id) ? card.emoji : "❓"}
+          </button>
         ))}
       </div>
     </div>
