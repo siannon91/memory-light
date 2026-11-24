@@ -2,7 +2,7 @@ import Card from "./Card"
 
 function Board({ cards, flipped, matched, onCardClick }) {
   return (
-    <div>
+    <div className="board">
       {cards.map((card) => (
         <Card
           key={card.id}
