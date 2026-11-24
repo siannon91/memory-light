@@ -45,6 +45,13 @@ function App() {
     setFlipped([...flipped, card.id])
   }
 
+  function resetGame() {
+    setCards(shuffle(createDeck()))
+    setFlipped([])
+    setMatched([])
+    setMoves(0)
+  }
+
   useEffect(() => {
     if (flipped.length !== 2) return
 
@@ -68,6 +75,7 @@ function App() {
     <div>
       <h1>Memory Light</h1>
       <p>Trekk: {moves}</p>
+      <button onClick={resetGame}>Nytt spill</button>
       <div>
         {cards.map((card) => (
           <button key={card.id} onClick={() => handleCardClick(card)}>
