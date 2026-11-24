@@ -75,6 +75,9 @@ function App() {
           </button>
         ))}
       </div>
+      {matched.length === cards.length && (
+        <p>Gratulerer! Du fant alle parene på {moves} trekk!</p>
+      )}
     </div>
   )
 }
