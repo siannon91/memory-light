@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Fraunces";
+    src: url("./assets/fonts/Fraunces.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +17,7 @@ body {
     background-image: url("./assets/sfondo.jpg");
     background-size: cover;
     background-position: center;
+    font-family: "Fraunces", Georgia, serif;
 }
 
 .board {
