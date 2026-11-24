@@ -43,7 +43,7 @@ function App() {
   }, [flipped, cards])
 
   return (
-    <div>
+    <div className="app">
       <h1>Memory Light</h1>
       <p>Trekk: {moves}</p>
       <button onClick={resetGame}>Nytt spill</button>

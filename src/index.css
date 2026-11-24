@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    background-color: #f5efe0;
+    background-image: url("./assets/sfondo.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -23,4 +31,15 @@
     display: block;
     width: 100%;
     border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 4, 0, 0.541);
+}
+
+.app {
+    width: calc(100% - 32px);
+    max-width: 540px;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: rgba(245, 239, 224, 0.6);
+    border-radius: 16px;
+    text-align: center;
 }
