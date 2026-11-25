@@ -8,14 +8,14 @@ import neve from "../assets/neve.jpg"
 import natale from "../assets/natale.jpg"
 
 export const symbols = [
-  { name: "libro", emoji: "📖", image: libro },
-  { name: "sciarpa", emoji: "🧣", image: sciarpa },
-  { name: "biscotto", emoji: "🍪", image: biscotto },
-  { name: "tea", emoji: "🍵", image: tea },
-  { name: "pupazzo", emoji: "⛄", image: pupazzo },
-  { name: "giornale", emoji: "📰", image: giornale },
-  { name: "neve", emoji: "❄️", image: neve },
-  { name: "natale", emoji: "🎄", image: natale },
+  { name: "libro", image: libro },
+  { name: "sciarpa", image: sciarpa },
+  { name: "biscotto", image: biscotto },
+  { name: "tea", image: tea },
+  { name: "pupazzo", image: pupazzo },
+  { name: "giornale", image: giornale },
+  { name: "neve", image: neve },
+  { name: "natale", image: natale },
 ]
 
 export function createDeck() {
