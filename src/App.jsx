@@ -42,24 +42,29 @@ function App() {
     }
   }, [flipped, cards])
 
+  const isWon = matched.length === cards.length
+
   return (
     <div className="game">
       <h1>Memory Game</h1>
       <p>Trekk: {moves}</p>
           
-      <div className="app">
+      <div className={isWon ? "app won" : "app"}>
+        <div className="play-area">
           <Board
             cards={cards}
             flipped={flipped}
             matched={matched}
             onCardClick={handleCardClick}
           />
-      
-          {matched.length === cards.length && (
-          <p>Gratulerer! Du fant alle parene på {moves} trekk!</p>
+          {isWon && (
+            <p className="win-message">
+              Gratulerer! Du fant alle parene på {moves} trekk!
+            </p>
           )}
-          <button className="new-game" onClick={resetGame}>Nytt spill</button>
         </div>
+        <button className="new-game" onClick={resetGame}>Nytt spill</button>
+      </div>
     </div>
   )
 }
