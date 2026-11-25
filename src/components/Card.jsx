@@ -2,12 +2,14 @@ import retro from "../assets/retro.jpg"
 
 function Card({ card, isFaceUp, onClick }) {
   return (
-    <button onClick={onClick}>
-      <img
-        src={isFaceUp ? card.image : retro}
-        alt={isFaceUp ? card.name : "Bakside"}
-        width="100"
-      />
+    <button
+      className={isFaceUp ? "card flipped" : "card"}
+      onClick={onClick}
+    >
+      <div className="card-inner">
+        <img className="card-back" src={retro} alt="Bakside" />
+        <img className="card-front" src={card.image} alt={card.name} />
+      </div>
     </button>
   )
 }
