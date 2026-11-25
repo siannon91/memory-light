@@ -7,12 +7,15 @@ function App() {
   const [flipped, setFlipped] = useState([])
   const [matched, setMatched] = useState([])
   const [moves, setMoves] = useState(0)
+  const [seconds, setSeconds] = useState(0)
+  const [started, setStarted] = useState(false)
 
   function handleCardClick(card) {
     if (flipped.length === 2) return
     if (flipped.includes(card.id)) return
     if (matched.includes(card.id)) return
 
+    setStarted(true)
     setFlipped([...flipped, card.id])
   }
 
@@ -21,6 +24,8 @@ function App() {
     setFlipped([])
     setMatched([])
     setMoves(0)
+    setSeconds(0)
+    setStarted(false)
   }
 
   useEffect(() => {
@@ -44,10 +49,20 @@ function App() {
 
   const isWon = matched.length === cards.length
 
+   useEffect(() => {
+    if (!started || isWon) return
+
+    const interval = setInterval(() => {
+      setSeconds((s) => s + 1)
+    }, 1000)
+
+    return () => clearInterval(interval)
+   }, [started, isWon])
+
   return (
     <div className="game">
       <h1>Memory Game</h1>
-      <p>Trekk: {moves}</p>
+      <p>Trekk: {moves} - Tid: {seconds} s</p>
           
       <div className={isWon ? "app won" : "app"}>
         <div className="play-area">

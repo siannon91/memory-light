@@ -99,6 +99,10 @@ p {
     justify-content: center;
     padding: 16px;
     animation: fade-in 0.8s 2s both;
+    font-size: 3rem;
+    color: #2f5233;
+    filter: drop-shadow(0 8px 20px #e5b400);
+    text-transform: uppercase;
 }
 
 .game {
