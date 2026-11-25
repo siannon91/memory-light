@@ -74,7 +74,7 @@ function App() {
           />
           {isWon && (
             <p className="win-message">
-              Gratulerer! Du fant alle parene på {moves} trekk!
+              Gratulerer! Du fant alle parene på {moves} trekk og {seconds} sekunder!
             </p>
           )}
         </div>
